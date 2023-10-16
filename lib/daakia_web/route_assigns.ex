@@ -11,19 +11,19 @@ defmodule DaakiaWeb.RouteAssigns do
           # If this matches the `current_page` prop, it will be highlighted
           name: :dashboard,
           label: "Dashboard",
-          icon: "dashboard",
+          icon: "ri:home-6-line",
           path: ~p"/"
         },
         %{
           name: :emails,
           label: "Campaigns",
-          icon: "email",
+          icon: "ri:send-plane-line",
           path: ~p"/campaigns"
         },
         %{
           name: :subscribers,
           label: "Subscribers",
-          icon: "subscriber",
+          icon: "ri:group-line",
           path: ~p"/"
         }
       ],
@@ -33,13 +33,13 @@ defmodule DaakiaWeb.RouteAssigns do
           # If this matches the `current_page` prop, it will be highlighted
           name: :feedback,
           label: "Feedback",
-          icon: "feedback",
+          icon: "ri:feedback-line",
           path: ~p"/"
         },
         %{
           name: :settings,
           label: "Settings",
-          icon: "settings",
+          icon: "ri:settings-3-line",
           path: ~p"/"
         }
       ]

@@ -77,3 +77,7 @@ config :daakia, ash_apis: [Daakia.Accounts, Daakia.Newsletters]
 # config :ash, :validate_api_resource_inclusion?, false
 # config :ash, :validate_api_config_inclusion?, false
 config :ash, :use_all_identities_in_manage_relationship?, false
+
+# config :iconify_ex, :mode, :css
+config :iconify_ex, :mode, :inline
+# config :iconify_ex, :mode, :set

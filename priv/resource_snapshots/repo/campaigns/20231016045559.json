@@ -131,13 +131,13 @@
         "schema": "public",
         "multitenancy": {
           "global": null,
-          "attribute": null,
-          "strategy": null
+          "strategy": null,
+          "attribute": null
         },
         "primary_key?": true,
         "destination_attribute": "id",
-        "deferrable": false,
         "on_delete": null,
+        "deferrable": false,
         "on_update": null,
         "destination_attribute_default": null,
         "destination_attribute_generated": null
@@ -148,14 +148,14 @@
     }
   ],
   "table": "campaigns",
-  "hash": "6D176DFE36F411EF18CF65C5F603CBB038EEF55EE03A9E038878E00EDB69E37C",
+  "hash": "7887E510275DEBE48B987CA786E41D7ED032B572B5CF08C2457E2A86F7C54329",
   "repo": "Elixir.Daakia.Repo",
   "identities": [],
   "schema": null,
   "multitenancy": {
     "global": null,
-    "attribute": null,
-    "strategy": null
+    "strategy": null,
+    "attribute": null
   },
   "base_filter": null,
   "check_constraints": [],

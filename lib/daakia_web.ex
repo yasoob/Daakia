@@ -68,6 +68,7 @@ defmodule DaakiaWeb do
 
   def html do
     quote do
+      import Iconify
       use Phoenix.Component
 
       # Import convenience functions from controllers

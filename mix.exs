@@ -39,7 +39,7 @@ defmodule Daakia.MixProject do
       {:phoenix_html, "~> 3.3"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.19.0"},
-      {:floki, ">= 0.30.0", only: :test},
+      {:floki, ">= 0.30.0", only: [:dev, :test]},
       {:phoenix_live_dashboard, "~> 0.8.0"},
       {:esbuild, "~> 0.7", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.2.0", runtime: Mix.env() == :dev},
@@ -51,10 +51,13 @@ defmodule Daakia.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       # Ash related
-      {:ash, "~> 2.15.9"},
+      # {:ash, "~> 2.15.9"},
+      {:ash, github: "ash-project/ash", override: true},
       {:ash_authentication, "~> 3.11.15"},
       {:ash_authentication_phoenix, "~> 1.8.4"},
-      {:ash_postgres, "~> 1.3.52"}
+      {:ash_postgres, "~> 1.3.52"},
+      {:iconify_ex, "~> 0.4.0"},
+      {:faker, "~> 0.17", only: [:dev, :test]}
     ]
   end
 

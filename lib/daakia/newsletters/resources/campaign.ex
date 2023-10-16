@@ -30,13 +30,6 @@ defmodule Daakia.Newsletters.Campaign do
     end
   end
 
-  # code_interface do
-  #   define_for Daakia.Newsletters
-  #   define :new_empty_email, args: [], action: :new
-  #   define :get_by_id, args: [:id], action: :by_id
-  #   define :list_recent
-  # end
-
   actions do
     defaults [:create, :read, :update, :destroy]
   end
@@ -87,6 +80,20 @@ defmodule Daakia.Newsletters.Campaign do
 
     create_timestamp :created_at
     update_timestamp :updated_at
+  end
+
+  code_interface do
+    define_for Daakia.Newsletters
+    define :new_campaign, action: :new_campaign
+  end
+
+  actions do
+    create :new_campaign do
+      primary? true
+      accept [:name, :subject, :from_email, :body]
+
+      change relate_actor(:user)
+    end
   end
 
   relationships do

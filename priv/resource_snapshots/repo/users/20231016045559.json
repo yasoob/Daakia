@@ -32,7 +32,7 @@
     }
   ],
   "table": "users",
-  "hash": "9565B12E7DD42B972D52C60C762719EB8FB9A62224E7D7D9D17C86AAE3ED0AE3",
+  "hash": "47473D757258C32DB41280DE444E3FE6622B5C70AFD5A38AF65FA9BF77F66F59",
   "repo": "Elixir.Daakia.Repo",
   "identities": [
     {
@@ -47,8 +47,8 @@
   "schema": null,
   "multitenancy": {
     "global": null,
-    "attribute": null,
-    "strategy": null
+    "strategy": null,
+    "attribute": null
   },
   "base_filter": null,
   "check_constraints": [],

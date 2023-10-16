@@ -1,10 +1,50 @@
 {
   "attributes": [
     {
-      "default": "fragment(\"now()\")",
+      "default": "fragment(\"uuid_generate_v4()\")",
       "size": null,
-      "type": "utc_datetime_usec",
-      "source": "updated_at",
+      "type": "uuid",
+      "source": "id",
+      "references": null,
+      "allow_nil?": false,
+      "generated?": false,
+      "primary_key?": true
+    },
+    {
+      "default": "nil",
+      "size": null,
+      "type": "text",
+      "source": "email",
+      "references": null,
+      "allow_nil?": false,
+      "generated?": false,
+      "primary_key?": false
+    },
+    {
+      "default": "nil",
+      "size": null,
+      "type": "text",
+      "source": "name",
+      "references": null,
+      "allow_nil?": true,
+      "generated?": false,
+      "primary_key?": false
+    },
+    {
+      "default": "%{}",
+      "size": null,
+      "type": "map",
+      "source": "attributes",
+      "references": null,
+      "allow_nil?": false,
+      "generated?": false,
+      "primary_key?": false
+    },
+    {
+      "default": "\"enabled\"",
+      "size": null,
+      "type": "text",
+      "source": "status",
       "references": null,
       "allow_nil?": false,
       "generated?": false,
@@ -21,65 +61,25 @@
       "primary_key?": false
     },
     {
-      "default": "nil",
+      "default": "fragment(\"now()\")",
       "size": null,
-      "type": "map",
-      "source": "extra_data",
-      "references": null,
-      "allow_nil?": true,
-      "generated?": false,
-      "primary_key?": false
-    },
-    {
-      "default": "nil",
-      "size": null,
-      "type": "text",
-      "source": "purpose",
+      "type": "utc_datetime_usec",
+      "source": "updated_at",
       "references": null,
       "allow_nil?": false,
       "generated?": false,
       "primary_key?": false
-    },
-    {
-      "default": "nil",
-      "size": null,
-      "type": "utc_datetime",
-      "source": "expires_at",
-      "references": null,
-      "allow_nil?": false,
-      "generated?": false,
-      "primary_key?": false
-    },
-    {
-      "default": "nil",
-      "size": null,
-      "type": "text",
-      "source": "subject",
-      "references": null,
-      "allow_nil?": false,
-      "generated?": false,
-      "primary_key?": false
-    },
-    {
-      "default": "nil",
-      "size": null,
-      "type": "text",
-      "source": "jti",
-      "references": null,
-      "allow_nil?": false,
-      "generated?": false,
-      "primary_key?": true
     }
   ],
-  "table": "tokens",
-  "hash": "0BB13EEF637E4EFDCB8AAAC24661A1AD9752F4150FEC8239549DA57AC490846B",
+  "table": "subscribers",
+  "hash": "BD5C5DD17DB87C1783FF0E76AF3B1FBF0DEC57DC9A09E18CFCA4F9E33EEA36C9",
   "repo": "Elixir.Daakia.Repo",
   "identities": [],
   "schema": null,
   "multitenancy": {
     "global": null,
-    "attribute": null,
-    "strategy": null
+    "strategy": null,
+    "attribute": null
   },
   "base_filter": null,
   "check_constraints": [],

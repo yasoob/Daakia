@@ -5,7 +5,7 @@ defmodule DaakiaWeb.HomeLive do
   use Phoenix.Component
 
   def mount(_, _session, socket) do
-    {:ok, socket}
+    {:ok, socket |> assign(page_title: "Dashboard")}
   end
 
   def get_chart_data() do
@@ -36,8 +36,17 @@ defmodule DaakiaWeb.HomeLive do
     IO.puts(inspect(assigns))
 
     ~H"""
+    <DaakiaWeb.CustomComponents.main_header>
+      <:title>
+        Dashboard
+      </:title>
+    </DaakiaWeb.CustomComponents.main_header>
+    <div class="px-2 w-full max-w-7xl mx-auto sm:px-4">
+      <div class="relative rounded-xl  border-gray-400 dark:border-gray-600 opacity-75">
+        <.greeting />
+      </div>
+    </div>
     <%!-- <LayoutHelpers.sidebar sidebar_menu={@sidebar_menu} current_path={~p"/"} page_title="Dashboard"> --%>
-    <.greeting />
     <%!-- <.chart_grid /> --%>
     <%!-- </LayoutHelpers.sidebar> --%>
     """
