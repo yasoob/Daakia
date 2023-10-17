@@ -53,21 +53,21 @@ defmodule Daakia.Newsletters.Subscriber do
       #   end)
       # end
 
-      change fn changeset, _context ->
-        IO.inspect("are you getting here?")
+      # change fn changeset, _context ->
+      #   # IO.inspect("are you getting here?")
 
-        Ash.Changeset.after_action(changeset, fn changeset, subscriber ->
-          IO.inspect("how about here?")
+      #   Ash.Changeset.after_action(changeset, fn changeset, subscriber ->
+      #     # IO.inspect("how about here?")
 
-          Daakia.Newsletters.SubscriberList.create!(
-            subscriber.id,
-            changeset.arguments.list_id,
-            :confirmed
-          )
+      #     Daakia.Newsletters.SubscriberList.create!(
+      #       subscriber.id,
+      #       changeset.arguments.list_id,
+      #       :confirmed
+      #     )
 
-          {:ok, subscriber}
-        end)
-      end
+      #     {:ok, subscriber}
+      #   end)
+      # end
     end
 
     # create :new_subscriber do

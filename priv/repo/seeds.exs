@@ -168,17 +168,6 @@ end
 
 {time, result} = :timer.tc(sub_adder, [])
 
-# Using Zach's recommendation of async_stream
-
-subs =
-  Enum.map(0..100_000, fn _ ->
-    %{
-      email: Faker.Internet.email(),
-      name: Faker.Person.name(),
-      list_id: list.id
-    }
-  end)
-
 # Create new subscribers asynchronously
 
 subs =
@@ -197,21 +186,16 @@ sub_adder = fn ->
     Subscriber,
     :new_subscriber,
     return_records?: false,
-    batch_size: 1000,
-    max_concurrency: 10
+    batch_size: 5000,
+    max_concurrency: 9,
+    upsert?: true,
+    upsert_fields: [:email],
+    upsert_identity: :unique_email,
+    timeout: :infinity
   )
 end
 
 {time, result} = :timer.tc(sub_adder, [])
-
-# Simply testing how to stream
-
-result =
-  1..1000
-  |> Stream.chunk_every(100)
-  |> Task.async_stream(fn chunk -> chunk end)
-  |> Enum.to_list()
-  |> Enum.reduce([], fn {:ok, result}, acc -> [result | acc] end)
 
 # Insert subscribers to the DB
 

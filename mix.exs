@@ -55,7 +55,8 @@ defmodule Daakia.MixProject do
       {:ash, github: "ash-project/ash", override: true},
       {:ash_authentication, "~> 3.11.15"},
       {:ash_authentication_phoenix, "~> 1.8.4"},
-      {:ash_postgres, "~> 1.3.52"},
+      # {:ash_postgres, "~> 1.3.52"},
+      {:ash_postgres, github: "ash-project/ash_postgres", override: true},
       {:iconify_ex, "~> 0.4.0"},
       {:faker, "~> 0.17", only: [:dev, :test]}
     ]
